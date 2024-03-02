@@ -4,9 +4,12 @@ import { store } from '@/store'
 const darkModeKey = '__dark_mode__'
 function isDarkMode() {
   const darkMode = window.localStorage.getItem(darkModeKey)
-  if (darkMode)
+  if (darkMode) {
     return darkMode === 'true'
-  else return window.matchMedia('(prefers-color-scheme: dark)').matches
+  }
+  else {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+  }
 }
 
 export const useDarkModeStore = defineStore({

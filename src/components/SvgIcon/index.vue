@@ -12,9 +12,12 @@ const props = withDefaults(defineProps<Props>(), {
 
 const iconName = computed(() => `#icon-${props.name}`)
 const svgClass = computed(() => {
-  if (props.className)
+  if (props.className) {
     return `svg-icon ${props.className}`
-  else return 'svg-icon'
+  }
+  else {
+    return 'svg-icon'
+  }
 })
 </script>
 

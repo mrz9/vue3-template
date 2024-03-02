@@ -33,8 +33,9 @@ router.beforeEach((to: toRouteType, from, next) => {
 router.beforeEach(async (to, _from, next) => {
   const paramsLocale = to.params.locale as string
   // // use locale if paramsLocale is not in SUPPORT_LOCALES
-  if (!SUPPORT_LOCALES.includes(paramsLocale))
+  if (!SUPPORT_LOCALES.includes(paramsLocale)) {
     return next(`/${DEFAULT_LOCALE}`)
+  }
   // // load locale messages
   await loadLocaleMessages(i18n, paramsLocale)
 

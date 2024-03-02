@@ -10,10 +10,12 @@ export const useCachedViewStore = defineStore({
   }),
   actions: {
     addCachedView(view: toRouteType) {
-      if (this.cachedViewList.includes(view.name as string))
+      if (this.cachedViewList.includes(view.name as string)) {
         return
-      if (!view?.meta?.noCache)
+      }
+      if (!view?.meta?.noCache) {
         this.cachedViewList.push(view.name as string)
+      }
     },
     delCachedView(view: toRouteType) {
       const index = this.cachedViewList.indexOf(view.name as string)
